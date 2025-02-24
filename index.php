@@ -44,3 +44,25 @@ for($i= 0 ; $i <10; $i++){
     </form>
 </body>
 </html>
+
+
+
+
+
+<?php
+$izbrano = isset($_POST["razmerje"]) ? $_POST["razmerje"] : "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo "<p>Izbrali ste: <strong>$izbrano</strong></p>";
+}
+?>
+
+<form method="post">
+    <label for="razmerje">Izberi razmerje:</label>
+    <select name="razmerje" id="razmerje" onchange="this.form.submit()">
+        <option value="" disabled selected>Izberi...</option>
+        <option value="samski" <?= ($izbrano == 'samski') ? 'selected' : '' ?>>samski</option>
+        <option value="v zvezi" <?= ($izbrano == 'v zvezi') ? 'selected' : '' ?>>v zvezi</option>
+        <option value="komplicirano je" <?= ($izbrano == 'komplicirano je') ? 'selected' : '' ?>>komplicirano je</option>
+    </select>
+</form>
