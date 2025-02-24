@@ -1,11 +1,8 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $width = isset($_POST['width']) ? (int)$_POST['width'] : 100;
-    $height = isset($_POST['height']) ? (int)$_POST['height'] : 100;
+    $width = $_POST['width'] ;
+    $height = $_POST['height'] ;
 
-    // Ensure values are positive
-    if ($width <= 0) $width = 100;
-    if ($height <= 0) $height = 100;
 } else {
     $width = 100;
     $height = 100;
